@@ -1,0 +1,1198 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Happy Birthday Sanu Maya!</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        body {
+            background: linear-gradient(135deg, #1a1a2e 0%, #16213e 50%, #0f3460 100%);
+            min-height: 100vh;
+            overflow-x: hidden;
+            color: #fff;
+        }
+
+        /* Animation Background */
+        .animation-bg {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: -1;
+            overflow: hidden;
+        }
+
+        .floating-heart {
+            position: absolute;
+            color: rgba(255, 105, 180, 0.4);
+            font-size: 24px;
+            animation: float 15s infinite linear;
+        }
+
+        @keyframes float {
+            0% {
+                transform: translateY(100vh) rotate(0deg);
+                opacity: 0;
+            }
+            10% {
+                opacity: 1;
+            }
+            90% {
+                opacity: 1;
+            }
+            100% {
+                transform: translateY(-100px) rotate(360deg);
+                opacity: 0;
+            }
+        }
+
+        /* Main Container */
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+            text-align: center;
+        }
+
+        /* Header Section */
+        .header {
+            padding: 40px 20px;
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 20px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+            margin-bottom: 30px;
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        h1 {
+            font-size: 3.5rem;
+            color: #e75480;
+            margin-bottom: 10px;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+        }
+
+        .subtitle {
+            font-size: 1.5rem;
+            color: #f8f8f8;
+            margin-bottom: 30px;
+        }
+
+        .btn {
+            display: inline-block;
+            padding: 15px 40px;
+            background: linear-gradient(45deg, #e75480, #ff9a9e);
+            color: white;
+            border: none;
+            border-radius: 50px;
+            font-size: 1.2rem;
+            font-weight: bold;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            box-shadow: 0 5px 15px rgba(231, 84, 128, 0.4);
+            text-decoration: none;
+            margin: 10px;
+        }
+
+        .btn:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 20px rgba(231, 84, 128, 0.6);
+        }
+
+        .btn-container {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 15px;
+            margin-top: 20px;
+        }
+
+        /* Rose Container */
+        .rose-container {
+            margin: 40px auto;
+            position: relative;
+            width: 100%;
+            display: flex;
+            justify-content: center;
+        }
+
+        /* Love Letter Container */
+        .letter-container {
+            display: none;
+            width: 90%;
+            max-width: 800px;
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 20px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            padding: 40px;
+            position: relative;
+            overflow: hidden;
+            margin: 40px auto;
+        }
+
+        .letter-header {
+            text-align: center;
+            margin-bottom: 40px;
+            position: relative;
+        }
+
+        .letter-content {
+            font-size: 1.2rem;
+            line-height: 1.8;
+            text-align: justify;
+            margin-bottom: 40px;
+        }
+
+        .letter-text {
+            margin-bottom: 20px;
+            opacity: 0;
+            animation: fadeIn 2s forwards;
+        }
+
+        .letter-text:nth-child(1) { animation-delay: 0.5s; }
+        .letter-text:nth-child(2) { animation-delay: 1s; }
+        .letter-text:nth-child(3) { animation-delay: 1.5s; }
+        .letter-text:nth-child(4) { animation-delay: 2s; }
+        .letter-text:nth-child(5) { animation-delay: 2.5s; }
+        .letter-text:nth-child(6) { animation-delay: 3s; }
+
+        /* Gallery Section */
+        .gallery-section {
+            display: none;
+            padding: 40px 20px;
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 20px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+            margin-bottom: 30px;
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .gallery-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 30px;
+        }
+
+        .back-btn {
+            background: rgba(255, 255, 255, 0.2);
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 50px;
+            cursor: pointer;
+            font-size: 1rem;
+            transition: all 0.3s ease;
+        }
+
+        .back-btn:hover {
+            background: #e75480;
+        }
+
+        .gallery-tabs {
+            display: flex;
+            justify-content: center;
+            margin-bottom: 30px;
+            gap: 10px;
+        }
+
+        .tab-btn {
+            padding: 10px 20px;
+            background: rgba(255, 255, 255, 0.1);
+            color: white;
+            border: none;
+            border-radius: 50px;
+            cursor: pointer;
+            font-size: 1rem;
+            transition: all 0.3s ease;
+        }
+
+        .tab-btn.active {
+            background: #e75480;
+            color: white;
+        }
+
+        /* Photos Grid */
+        .photos-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+            gap: 15px;
+            margin-bottom: 30px;
+        }
+
+        .photo-item {
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+            transition: all 0.3s ease;
+            aspect-ratio: 1;
+            background: rgba(255, 255, 255, 0.1);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 3rem;
+            color: #e75480;
+        }
+
+        .photo-item:hover {
+            transform: scale(1.05);
+            background: rgba(255, 255, 255, 0.2);
+        }
+
+        /* Videos Grid */
+        .videos-grid {
+            display: none;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 20px;
+            margin-bottom: 30px;
+        }
+
+        .video-item {
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+            transition: all 0.3s ease;
+            aspect-ratio: 16/9;
+            background: rgba(255, 255, 255, 0.1);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 3rem;
+            color: #e75480;
+        }
+
+        .video-item:hover {
+            transform: scale(1.03);
+            background: rgba(255, 255, 255, 0.2);
+        }
+
+        /* Fullscreen Viewer */
+        .viewer {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.9);
+            z-index: 1000;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+        }
+
+        .viewer-content-container {
+            max-width: 90%;
+            max-height: 80%;
+            border-radius: 10px;
+            box-shadow: 0 0 30px rgba(255, 255, 255, 0.2);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .viewer-nav {
+            display: flex;
+            justify-content: space-between;
+            width: 90%;
+            margin-top: 20px;
+        }
+
+        .nav-btn {
+            background: rgba(255, 255, 255, 0.2);
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 50px;
+            cursor: pointer;
+            font-size: 1rem;
+            transition: all 0.3s ease;
+        }
+
+        .nav-btn:hover {
+            background: rgba(255, 255, 255, 0.4);
+        }
+
+        .close-btn {
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            background: none;
+            border: none;
+            color: white;
+            font-size: 2rem;
+            cursor: pointer;
+        }
+
+        /* Footer */
+        .footer {
+            margin-top: 40px;
+            padding: 20px;
+            color: #f8f8f8;
+            font-size: 1.2rem;
+        }
+
+        .heart {
+            color: #e75480;
+            animation: heartbeat 1.5s infinite;
+        }
+
+        @keyframes heartbeat {
+            0% { transform: scale(1); }
+            5% { transform: scale(1.3); }
+            10% { transform: scale(1); }
+            15% { transform: scale(1.3); }
+            20% { transform: scale(1); }
+            100% { transform: scale(1); }
+        }
+
+        /* Text Animation */
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        /* Enchanted Rose Styles */
+        .rose {
+            position: relative;
+            transform: scale(0.8);
+        }
+
+        .glass {
+            height: 350px;
+            width: 200px;
+            background: #122139;
+            border-radius: 300px 300px 0px 0px;
+            position: relative;
+            margin: 0 auto;
+        }
+        .glass:before {
+            content: "";
+            height: 10px;
+            width: 10px;
+            transform-origin: center;
+            border: 10px solid #122139;
+            border-radius: 100%;
+            position: absolute;
+            left: 87px;
+            top: -25px;
+        }
+        .glass:after {
+            content: "";
+            position: absolute;
+            height: 15px;
+            width: 250px;
+            background: #a52a2a;
+            top: 100%;
+            left: -13%;
+        }
+
+        .shine {
+            width: 12px;
+            height: 140px;
+            background: white;
+            opacity: 0.2;
+            position: absolute;
+            left: 85%;
+            top: 80px;
+            border-radius: 100px;
+            z-index: 10;
+        }
+        .shine:before {
+            content: "";
+            width: 12px;
+            height: 20px;
+            position: absolute;
+            background: white;
+            top: 160px;
+            border-radius: 100px;
+        }
+
+        .petals > div {
+            position: absolute;
+            background: #d52d58;
+            width: 45px;
+            height: 80px;
+            top: 55px;
+            transition: all 0.5s ease-out;
+        }
+        .petals > div:nth-child(1) {
+            border-radius: 15px;
+            box-shadow: 0px 0px 30px #f594b8;
+            left: 80px;
+            top: 60px;
+            background: #d52d58;
+        }
+        .petals > div:nth-child(2), .petals > div:nth-child(4), .petals > div:nth-child(6) {
+            background: #b81b43;
+            left: 60px;
+            border-radius: 0px 30px 0px 30px;
+            transform-origin: bottom right;
+        }
+        .petals > div:nth-child(3), .petals > div:nth-child(5), .petals > div:nth-child(7) {
+            background: #b81b43;
+            left: 100px;
+            border-radius: 30px 0px 30px 0px;
+            transform-origin: bottom left;
+        }
+        .petals > div:nth-child(2) {
+            z-index: 5;
+            background: #ab1a3f;
+            top: 75px;
+            height: 70px;
+            box-shadow: 0px 0px 50px rgba(245, 148, 184, 0.5);
+            animation: bloom2 3s ease-in-out;
+            animation-fill-mode: forwards;
+        }
+        .petals > div:nth-child(3) {
+            z-index: 4;
+            background: #ab1a3f;
+            top: 75px;
+            height: 70px;
+            box-shadow: 0px 0px 50px rgba(245, 148, 184, 0.5);
+            animation: bloom3 3s ease-in-out, glowing 2.5s ease-in-out infinite;
+            animation-fill-mode: forwards;
+        }
+        .petals > div:nth-child(4) {
+            z-index: 3;
+            background: #b81b43;
+            top: 70px;
+            height: 75px;
+            box-shadow: 0px 0px 50px rgba(245, 148, 184, 0.5);
+            animation: bloom4 3s ease-in-out, glowing 2.5s ease-in-out infinite;
+            animation-fill-mode: forwards;
+        }
+        .petals > div:nth-child(5) {
+            z-index: 2;
+            background: #b81b43;
+            top: 70px;
+            height: 75px;
+            box-shadow: 0px 0px 50px rgba(245, 148, 184, 0.5);
+            animation: bloom5 3s ease-in-out, glowing 2.5s ease-in-out infinite;
+            animation-fill-mode: forwards;
+        }
+        .petals > div:nth-child(6) {
+            z-index: 1;
+            background: #c9204b;
+            top: 65px;
+            height: 70px;
+            box-shadow: 0px 0px 50px rgba(245, 148, 184, 0.3);
+            animation: bloom6 3s ease-in-out, glowing 2.5s ease-in-out infinite;
+            animation-fill-mode: forwards;
+        }
+        .petals > div:nth-child(7) {
+            z-index: 0;
+            background: #c9204b;
+            top: 65px;
+            height: 70px;
+            box-shadow: 0px 0px 50px rgba(245, 148, 184, 0.3);
+            animation: bloom7 3s ease-in-out, glowing 2.5s ease-in-out infinite;
+            animation-fill-mode: forwards;
+        }
+
+        .deadPetals > div {
+            position: absolute;
+            background: #d52d58;
+            width: 20px;
+            height: 15px;
+            top: 120px;
+            border-radius: 0px 30px 0px 30px;
+            box-shadow: 0px 0px 30px rgba(245, 148, 184, 0.5);
+            transition: all 0.5s ease-out;
+        }
+        .deadPetals > div:nth-child(1) {
+            left: 95px;
+            transform: rotate(-30deg);
+            animation: falling 20s 4s ease-in-out infinite;
+        }
+        .deadPetals > div:nth-child(2) {
+            left: 62px;
+            transform: rotate(-30deg);
+            animation: falling 20s 8s ease-in-out infinite;
+        }
+        .deadPetals > div:nth-child(3) {
+            left: 78px;
+            transform: rotate(-30deg);
+            animation: falling 20s 12s ease-in-out infinite;
+        }
+        .deadPetals > div:nth-child(4) {
+            left: 100px;
+            transform: rotate(-30deg);
+            animation: falling 20s 16s ease-in-out infinite;
+        }
+
+        .leaves > div:nth-last-child(1) {
+            position: absolute;
+            width: 55px;
+            height: 30px;
+            background: #338f37;
+            top: 120px;
+            left: 75px;
+            border-radius: 100px;
+        }
+        .leaves > div:nth-child(1) {
+            position: absolute;
+            width: 6px;
+            height: 210px;
+            background: #054c05;
+            top: 95px;
+            left: 100px;
+            border-radius: 0 0 100px 100px;
+        }
+        .leaves > div:nth-child(2) {
+            position: absolute;
+            width: 30px;
+            height: 50px;
+            top: 53px;
+            border-radius: 5px 40px 20px 40px;
+            background: #054c05;
+            transform-origin: bottom;
+            transform: rotate(-30deg);
+            top: 180px;
+            left: 80px;
+            box-shadow: inset 5px 5px #066406;
+        }
+        .leaves > div:nth-child(3) {
+            position: absolute;
+            width: 30px;
+            height: 50px;
+            top: 53px;
+            border-radius: 40px 5px 40px 20px;
+            background: #054c05;
+            transform-origin: bottom;
+            transform: rotate(30deg);
+            top: 150px;
+            left: 95px;
+            box-shadow: inset -5px 5px #066406;
+        }
+
+        .thorns > div {
+            position: absolute;
+            width: 0;
+            height: 0;
+            top: 140px;
+        }
+        .thorns > div:nth-child(odd) {
+            border-top: 5px solid transparent;
+            border-bottom: 5px solid transparent;
+            border-left: 5px solid #054c05;
+            left: 105px;
+        }
+        .thorns > div:nth-child(even) {
+            border-top: 5px solid transparent;
+            border-bottom: 5px solid transparent;
+            border-right: 5px solid #054c05;
+            left: 95px;
+        }
+        .thorns > div:nth-child(1) {
+            top: 200px;
+        }
+        .thorns > div:nth-child(2) {
+            top: 170px;
+        }
+        .thorns > div:nth-child(4) {
+            top: 230px;
+        }
+
+        @keyframes bloom2 {
+            50% {
+                transform: rotate(-90deg);
+                top: 200px;
+                left: 100px;
+            }
+            100% {
+                transform: rotate(-60deg);
+                top: 252px;
+                left: 50px;
+                background: #71122a;
+                box-shadow: 0px 0px 0px rgba(245, 148, 184, 0);
+            }
+        }
+        @keyframes bloom3 {
+            100% {
+                transform: rotate(45deg);
+            }
+        }
+        @keyframes bloom4 {
+            100% {
+                transform: rotate(-20deg);
+            }
+        }
+        @keyframes bloom5 {
+            100% {
+                transform: rotate(20deg);
+            }
+        }
+        @keyframes bloom6 {
+            100% {
+                transform: rotate(-5deg);
+            }
+        }
+        @keyframes bloom7 {
+            100% {
+                transform: rotate(5deg);
+            }
+        }
+        @keyframes glowing {
+            50% {
+                background: #d7365f;
+                box-shadow: 0px 0px 60px #f594b8;
+            }
+        }
+        @keyframes falling {
+            20% {
+                top: 335px;
+                background: #9d193b;
+                box-shadow: 0px 0px 0px rgba(245, 148, 184, 0);
+            }
+            100% {
+                top: 335px;
+                opacity: 0;
+            }
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            h1 {
+                font-size: 2.5rem;
+            }
+            
+            .subtitle {
+                font-size: 1.2rem;
+            }
+            
+            .photos-grid {
+                grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+            }
+            
+            .videos-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .rose {
+                transform: scale(0.6);
+            }
+            
+            .btn-container {
+                flex-direction: column;
+                align-items: center;
+            }
+            
+            .btn {
+                width: 80%;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Animated Background -->
+    <div class="animation-bg" id="animationBg"></div>
+
+    <!-- Main Content -->
+    <div class="container">
+        <!-- Main Page -->
+        <div class="header" id="mainPage">
+            <h1>Happy Birthday Meri Pyarii Cuteeepieeee :) <i class="fas fa-birthday-cake"></i></h1>
+            <p class="subtitle">Janma din ko dherai dherai subhakamana meri mutu lai, Please mutu aafno akfam ramro sanga khayal rakha hai, you are my everything, tmee xeu rw ma ati dheraiii khusiii xuuu mutu!</p>
+            
+            <!-- Enchanted Rose -->
+            <div class="rose-container">
+                <div class="rose">
+                    <div class="glass">
+                        <div class="shine"></div>
+                    </div>
+                    <div class="thorns">
+                        <div></div>
+                        <div></div>
+                        <div></div>
+                        <div></div>
+                    </div>
+                    <div class="leaves">
+                        <div></div>
+                        <div></div>
+                        <div></div>
+                        <div></div>
+                    </div>
+                    <div class="petals">
+                        <div></div>
+                        <div></div>
+                        <div></div>
+                        <div></div>
+                        <div></div>
+                        <div></div>
+                        <div></div>
+                    </div>
+                    <div class="deadPetals">
+                        <div></div>
+                        <div></div>
+                        <div></div>
+                        <div></div>
+                    </div>
+                </div>
+            </div>
+            <p class="subtitle">Hamro maya nee astai ful jastai xa mutu jati j vayani jati nai garo vayani kahillai ghatdena kahillai pani hamro maya andakar ma janexaina, j jasto vayani milarw sadhai vari ek arka lai mastaiiii dheraiiii maya gardai basnu parxa huss mutu :)</p>
+            
+            <div class="btn-container">
+                <button class="btn" id="memoriesBtn">Our Happy Memories <i class="fas fa-images"></i></button>
+                <button class="btn" id="loveLetterBtn">My Love Letter <i class="fas fa-heart"></i></button>
+            </div>
+        </div>
+
+        <div class="letter-container" id="letterSection">
+            <div class="letter-header">
+                <h1>Meri pyariii sanu maya meri cuteeepieee</h1>
+                <p class="subtitle">Meri pyariiii mutu ko lagi</p>
+            </div>
+            
+            <div class="letter-content">
+                <p class="letter-text">Happy Birthday mutu, aja kai din vagwan ley ,eri mutu lai ayo ghoptey lai samala vanarw pathaidinu vako, kassam mutu lastaiiii dheraiiii lucky feel hunxa mutu ati dheraiii maya garni mutu pako xu, ILOVEYOUALOTSS meri mutu</p>
+                
+                <p class="letter-text">Mutu kasari vetim hami bich kai vayo trw hami sangai xam thim ani sadhai vari hunxam mutu, vagwan ley hamlai ek arka ko lagi banaunu vako ho mutu, thank you soooooo much mutu ayo pagal ghoptey lai ati dheraiiii maya pani pauna sakni raixu vanni garako ma mutu</p>
+                
+                <p class="letter-text">birthday bata tada pugey kyo hehe sorry, one again happiest birthday meri pyariii sanu maya, mutu kassam tmee akdam thik xiu mutu you are the best meri pyariii koi koi, kahillai aafulai eklai nasocha hai mutu ayo ghoptey sadhai tmee sanga hunxu mutu harek kura ma timro sath diyarw timlai akdamai dheraiiiiiii maya gararw rakhxu huss</p>
+                
+                <p class="letter-text">Kai time sanu maya ani mero sanu ko sabaiii sapana pura garni huss milarw sanu maya, kai time mutu ani kassam hami sadhai vari sangai hunxam dhukka basa hai sanu maya, hai mutu timlai garo huda kassam kasto dheraiii garo hunxa naramro lagxa hai hunxa ki kaas ma vakko vaya meri mutu ko akdam ramro sanga khayal rakhe hunxa aasu aauxa trw kai garna sakidina aaila trw kai time mutu ani meri mutu lai world kai sabbai khusiiii dinxu huss mutu</p>
+                
+                <p class="letter-text">PLease aafno akdam ramro sanga khayal rakha hau mutu, kai time ho sanu ani sadhai vari sangai manauni huss birthday mutu, ma physically tada vayani tmee sangai timro mutu ma xu sanu maya, happy birthday meri pyariiii mutu, you are my everything sanu maya i love you alots mutu, sanu ayo ghoptey bela bela pagal hunxa please samala hai sorry hai maaf gardeu huss mutu, kassam jaba tmee aayeu nee life ma taba bata balla tha pako xu ati dheraiii pani ksaile maya garni raixan vanarw sanu, mummy ley jasari khayal rakhxu atiii dheraiiii maya garxeu sadhai astai gari samala huss mutu ani hehe galti samjhi samjhi vetey paxi pitauli huss</p>
+                
+                <p class="letter-text">hehe dherai boley jasto xa sorry sanu maya, one again happy birthday meri pyariiii cuteepieee, see you soon sanu maya hehe timro pyariiii ghoptey humm nee tw</p>
+            </div>
+            
+            <div class="btn-container">
+                <button class="btn back-btn" id="backFromLetterBtn">Back to Main <i class="fas fa-arrow-left"></i></button>
+                <button class="btn" id="toMyLoveBtn">To My Love <span class="heart"><i class="fas fa-heart"></i></span></button>
+            </div>
+        </div>
+
+        <!-- Gallery Section -->
+        <div class="gallery-section" id="gallerySection">
+            <div class="gallery-header">
+                <button class="back-btn" id="backBtn"><i class="fas fa-arrow-left"></i> Back</button>
+                <h2>Our Happy Memories</h2>
+                <div style="width: 100px;"></div> <!-- Spacer for alignment -->
+            </div>
+
+            <div class="gallery-tabs">
+                <button class="tab-btn active" data-tab="photos">Photos (20)</button>
+                <button class="tab-btn" data-tab="videos">Videos (5)</button>
+            </div>
+
+            <!-- Photos Grid -->
+            <div class="photos-grid" id="photosGrid">
+                <!-- 20 photo items will be generated by JavaScript -->
+            </div>
+
+            <!-- Videos Grid -->
+            <div class="videos-grid" id="videosGrid">
+                <!-- 5 video items will be generated by JavaScript -->
+            </div>
+        </div>
+    </div>
+
+    <!-- Fullscreen Viewer -->
+    <div class="viewer" id="viewer">
+        <button class="close-btn" id="closeViewer"><i class="fas fa-times"></i></button>
+        <div class="viewer-content-container" id="viewerContentContainer">
+            <!-- Content will be dynamically inserted here -->
+        </div>
+        <div class="viewer-nav">
+            <button class="nav-btn" id="prevBtn"><i class="fas fa-chevron-left"></i> Previous</button>
+            <button class="nav-btn" id="nextBtn">Next <i class="fas fa-chevron-right"></i></button>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <div class="footer">
+        <p>Made with <span class="heart"><i class="fas fa-heart"></i></span> mero life ko sab vanda dheraiiii importand and special person ko lagi</p>
+    </div>
+    <div id="passwordOverlay" style="position:fixed; top:0; left:0; width:100%; height:100%; background:linear-gradient(135deg, #1a1a2e 0%, #16213e 100%); z-index:9999; display:flex; justify-content:center; align-items:center; flex-direction:column;">
+    <div style="background:rgba(255,255,255,0.1); padding:40px; border-radius:20px; backdrop-filter:blur(10px); text-align:center; border:1px solid rgba(255,255,255,0.2);">
+        <h2 style="color:#e75480; margin-bottom:20px;">🎂 Happy Birthday Sanu! 🎂</h2>
+        <p style="color:white; margin-bottom:20px;">Enter our special code to continue...</p>
+        <input type="password" id="passwordInput" placeholder="Enter password" style="padding:15px; border-radius:10px; border:none; width:200px; font-size:16px; text-align:center; margin-bottom:15px;">
+        <button onclick="checkPassword()" style="padding:12px 30px; background:#e75480; color:white; border:none; border-radius:10px; font-size:16px; cursor:pointer;">Enter</button>
+        <p id="errorMsg" style="color:#ff6b6b; margin-top:15px; display:none;">Incorrect code! Try again ❤️</p>
+    </div>
+</div>
+
+    <script>
+        function checkPassword() {
+    const password = document.getElementById('passwordInput').value;
+    const correctPassword = "2306"; // Change this to your preferred password
+    
+    if (password.toLowerCase() === correctPassword.toLowerCase()) {
+        document.getElementById('passwordOverlay').style.display = 'none';
+    } else {
+        document.getElementById('errorMsg').style.display = 'block';
+        document.getElementById('passwordInput').value = '';
+        document.getElementById('passwordInput').focus();
+    }
+}
+
+// Press Enter to submit
+document.getElementById('passwordInput').addEventListener('keypress', function(e) {
+    if (e.key === 'Enter') {
+        checkPassword();
+    }
+});
+
+        // Create floating hearts animation
+        function createHearts() {
+            const animationBg = document.getElementById('animationBg');
+            const heartsCount = 30;
+            
+            for (let i = 0; i < heartsCount; i++) {
+                const heart = document.createElement('div');
+                heart.classList.add('floating-heart');
+                heart.innerHTML = '<i class="fas fa-heart"></i>';
+                
+                // Random properties
+                const size = Math.random() * 20 + 10;
+                const left = Math.random() * 100;
+                const delay = Math.random() * 15;
+                const duration = Math.random() * 10 + 15;
+                
+                heart.style.fontSize = `${size}px`;
+                heart.style.left = `${left}vw`;
+                heart.style.animationDelay = `${delay}s`;
+                heart.style.animationDuration = `${duration}s`;
+                
+                animationBg.appendChild(heart);
+            }
+        }
+
+        // Generate photo and video items
+        function generateGalleryItems() {
+            const photosGrid = document.getElementById('photosGrid');
+            const videosGrid = document.getElementById('videosGrid');
+            
+            const photoUrls = [
+                '1.PNG', '2.PNG', '3.PNG', '4.JPG', '5.JPG',
+                '6.PNG', '7.JPG', '8.JPG', '9.jpg', '10.jpg',
+                '11.png', '12.jpg', '13.png', '14.jpg', '15.png',
+                '16.png', '17.png', '18.png', '19.jpg', '20.jpg'
+            ];
+
+            // Generate 20 photo items
+            for (let i = 1; i <= 20; i++) {
+                const photoItem = document.createElement('div');
+                photoItem.classList.add('photo-item');
+                photoItem.style.backgroundImage = `url('${photoUrls[i-1]}')`;
+                photoItem.style.backgroundSize = 'cover';
+                photoItem.style.backgroundPosition = 'center';
+                photoItem.dataset.index = i - 1;
+                photoItem.addEventListener('click', () => openViewer('photo', i - 1));
+                photosGrid.appendChild(photoItem);
+            }
+            
+            // Your actual video URLs or thumbnail images
+            const videoUrls = ['v1.mp4', 'v2.mp4', 'v3.mp4', 'v4.mp4', 'v5.mp4'];
+
+            // Generate 5 video items
+            for (let i = 1; i <= 5; i++) {
+                const videoItem = document.createElement('div');
+                videoItem.classList.add('video-item');
+                videoItem.innerHTML = `
+                    <i class="fas fa-play-circle" style="position: absolute; z-index: 2; font-size: 3rem;"></i>
+                    <video style="width: 100%; height: 100%; object-fit: cover; opacity: 0.7;">
+                        <source src="${videoUrls[i-1]}" type="video/mp4">
+                    </video>
+                `;
+                videoItem.dataset.index = i - 1;
+                videoItem.addEventListener('click', () => openViewer('video', i - 1));
+                videosGrid.appendChild(videoItem);
+            }
+        }
+
+        // Tab switching functionality
+        function setupTabs() {
+            const tabBtns = document.querySelectorAll('.tab-btn');
+            const photosGrid = document.getElementById('photosGrid');
+            const videosGrid = document.getElementById('videosGrid');
+            
+            tabBtns.forEach(btn => {
+                btn.addEventListener('click', () => {
+                    // Remove active class from all tabs
+                    tabBtns.forEach(b => b.classList.remove('active'));
+                    // Add active class to clicked tab
+                    btn.classList.add('active');
+                    
+                    // Show/hide grids based on tab
+                    if (btn.dataset.tab === 'photos') {
+                        photosGrid.style.display = 'grid';
+                        videosGrid.style.display = 'none';
+                    } else {
+                        photosGrid.style.display = 'none';
+                        videosGrid.style.display = 'grid';
+                    }
+                });
+            });
+        }
+
+        // Viewer functionality
+        let currentViewerType = 'photo';
+        let currentViewerIndex = 0;
+        
+        function openViewer(type, index) {
+            currentViewerType = type;
+            currentViewerIndex = index;
+            
+            const viewer = document.getElementById('viewer');
+            const viewerContentContainer = document.getElementById('viewerContentContainer');
+            
+            // Clear previous content
+            viewerContentContainer.innerHTML = '';
+            
+            if (type === 'photo') {
+                const photoUrls = [
+                    '1.PNG', '2.PNG', '3.PNG', '4.JPG', '5.JPG',
+                    '6.PNG', '7.JPG', '8.JPG', '9.jpg', '10.jpg',
+                    '11.png', '12.jpg', '13.png', '14.jpg', '15.png',
+                    '16.png', '17.png', '18.png', '19.jpg', '20.jpg'
+                ];
+                
+                // Create image element for photos
+                const img = document.createElement('img');
+                img.src = photoUrls[index];
+                img.alt = `Memory Photo ${index + 1}`;
+                img.style.maxWidth = '100%';
+                img.style.maxHeight = '100%';
+                img.style.borderRadius = '10px';
+                img.style.objectFit = 'contain';
+                
+                viewerContentContainer.appendChild(img);
+                
+            } else {
+                const videoUrls = ['v1.mp4', 'v2.mp4', 'v3.mp4', 'v4.mp4', 'v5.mp4'];
+                
+                // Create video element for videos
+                const video = document.createElement('video');
+                video.src = videoUrls[index];
+                video.controls = true;
+                video.autoplay = true;
+                video.style.maxWidth = '100%';
+                video.style.maxHeight = '100%';
+                video.style.borderRadius = '10px';
+                
+                viewerContentContainer.appendChild(video);
+            }
+            
+            viewer.style.display = 'flex';
+        }
+
+        function closeViewer() {
+            const viewer = document.getElementById('viewer');
+            const viewerContentContainer = document.getElementById('viewerContentContainer');
+            
+            // Stop any playing videos
+            const videos = viewerContentContainer.getElementsByTagName('video');
+            for (let video of videos) {
+                video.pause();
+                video.currentTime = 0;
+            }
+            
+            viewer.style.display = 'none';
+            viewerContentContainer.innerHTML = ''; // Clear content when closing
+        }
+
+        function navigateViewer(direction) {
+            const maxIndex = currentViewerType === 'photo' ? 19 : 4;
+            
+            if (direction === 'next') {
+                currentViewerIndex = (currentViewerIndex + 1) % (maxIndex + 1);
+            } else {
+                currentViewerIndex = (currentViewerIndex - 1 + (maxIndex + 1)) % (maxIndex + 1);
+            }
+            
+            // Update viewer content
+            const viewerContentContainer = document.getElementById('viewerContentContainer');
+            
+            // Clear previous content
+            viewerContentContainer.innerHTML = '';
+            
+            if (currentViewerType === 'photo') {
+                const photoUrls = [
+                    '1.PNG', '2.PNG', '3.PNG', '4.JPG', '5.JPG',
+                    '6.PNG', '7.JPG', '8.JPG', '9.jpg', '10.jpg',
+                    '11.png', '12.jpg', '13.png', '14.jpg', '15.png',
+                    '16.png', '17.png', '18.png', '19.jpg', '20.jpg'
+                ];
+                
+                const img = document.createElement('img');
+                img.src = photoUrls[currentViewerIndex];
+                img.alt = `Memory Photo ${currentViewerIndex + 1}`;
+                img.style.maxWidth = '100%';
+                img.style.maxHeight = '100%';
+                img.style.borderRadius = '10px';
+                img.style.objectFit = 'contain';
+                
+                viewerContentContainer.appendChild(img);
+                
+            } else {
+                const videoUrls = ['v1.mp4', 'v2.mp4', 'v3.mp4', 'v4.mp4', 'v5.mp4'];
+                
+                const video = document.createElement('video');
+                video.src = videoUrls[currentViewerIndex];
+                video.controls = true;
+                video.autoplay = true;
+                video.style.maxWidth = '100%';
+                video.style.maxHeight = '100%';
+                video.style.borderRadius = '10px';
+                
+                viewerContentContainer.appendChild(video);
+            }
+        }
+
+        // Page navigation
+        function setupNavigation() {
+            const mainPage = document.getElementById('mainPage');
+            const gallerySection = document.getElementById('gallerySection');
+            const letterSection = document.getElementById('letterSection');
+            const memoriesBtn = document.getElementById('memoriesBtn');
+            const loveLetterBtn = document.getElementById('loveLetterBtn');
+            const backBtn = document.getElementById('backBtn');
+            const backFromLetterBtn = document.getElementById('backFromLetterBtn');
+            
+            memoriesBtn.addEventListener('click', () => {
+                mainPage.style.display = 'none';
+                letterSection.style.display = 'none';
+                gallerySection.style.display = 'block';
+            });
+            
+            loveLetterBtn.addEventListener('click', () => {
+                mainPage.style.display = 'none';
+                gallerySection.style.display = 'none';
+                letterSection.style.display = 'block';
+            });
+            
+            backBtn.addEventListener('click', () => {
+                gallerySection.style.display = 'none';
+                letterSection.style.display = 'none';
+                mainPage.style.display = 'block';
+            });
+            
+            backFromLetterBtn.addEventListener('click', () => {
+                letterSection.style.display = 'none';
+                gallerySection.style.display = 'none';
+                mainPage.style.display = 'block';
+            });
+        }
+
+        // Love letter button click handler
+        document.getElementById('toMyLoveBtn').addEventListener('click', function() {
+            // Create a romantic message
+            const messages = [
+                "I love you more than words can say mutu!",
+                "You are my everything meri pyariii sanu maya!",
+                "Ayo ghoptey timro matra ho koi koi ani timr matra rahanxa!",
+                "tmee xeu rw ma xu sanu maya!",
+                "Akdamai dheraiiii lucky xu mutu tmee pako xu!",
+                "Meri mutu, Meri cuteeeepieeeee, Meri sanu maya, Meri life!"
+            ];
+            
+            const randomMessage = messages[Math.floor(Math.random() * messages.length)];
+            
+            // Create a floating message
+            const messageElement = document.createElement('div');
+            messageElement.textContent = randomMessage;
+            messageElement.style.position = 'fixed';
+            messageElement.style.color = '#000000';
+            messageElement.style.fontSize = '1.5rem';
+            messageElement.style.fontWeight = 'bold';
+            messageElement.style.textShadow = '0 0 10px rgba(255,255,255,0.5)';
+            messageElement.style.zIndex = '1000';
+            messageElement.style.left = '50%';
+            messageElement.style.top = '50%';
+            messageElement.style.transform = 'translate(-50%, -50%)';
+            messageElement.style.opacity = '0';
+            messageElement.style.transition = 'all 2s ease';
+            
+            document.body.appendChild(messageElement);
+            
+            // Animate the message
+            setTimeout(() => {
+                messageElement.style.opacity = '1';
+                messageElement.style.transform = 'translate(-50%, -100%)';
+            }, 100);
+            
+            // Remove the message after animation
+            setTimeout(() => {
+                messageElement.remove();
+            }, 3000);
+            
+            // Add heart particles
+            createHeartParticles();
+        });
+
+        // Create heart particles animation
+        function createHeartParticles() {
+            for (let i = 0; i < 20; i++) {
+                const heart = document.createElement('div');
+                heart.innerHTML = '<i class="fas fa-heart"></i>';
+                heart.style.position = 'fixed';
+                heart.style.color = '#e75480';
+                heart.style.fontSize = Math.random() * 20 + 10 + 'px';
+                heart.style.left = Math.random() * 100 + 'vw';
+                heart.style.top = '100vh';
+                heart.style.zIndex = '1000';
+                heart.style.opacity = '0.8';
+                heart.style.pointerEvents = 'none';
+                
+                document.body.appendChild(heart);
+                
+                // Animate the heart
+                const animation = heart.animate([
+                    { transform: 'translateY(0) scale(1)', opacity: 0.8 },
+                    { transform: `translateY(-${Math.random() * 300 + 100}px) scale(0.5)`, opacity: 0 }
+                ], {
+                    duration: Math.random() * 2000 + 1000,
+                    easing: 'cubic-bezier(0.215, 0.610, 0.355, 1)'
+                });
+                
+                // Remove heart after animation
+                animation.onfinish = () => {
+                    heart.remove();
+                };
+            }
+        }
+
+        // Initialize everything when page loads
+        document.addEventListener('DOMContentLoaded', () => {
+            createHearts();
+            generateGalleryItems();
+            setupTabs();
+            setupNavigation();
+            
+            // Viewer event listeners
+            document.getElementById('closeViewer').addEventListener('click', closeViewer);
+            document.getElementById('prevBtn').addEventListener('click', () => navigateViewer('prev'));
+            document.getElementById('nextBtn').addEventListener('click', () => navigateViewer('next'));
+            
+            // Close viewer when clicking outside content
+            document.getElementById('viewer').addEventListener('click', (e) => {
+                if (e.target.id === 'viewer') {
+                    closeViewer();
+                }
+            });
+        });
+    </script>
+</body>
+</html>
